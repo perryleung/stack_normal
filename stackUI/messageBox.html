@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="./qwebchannel.js"></script>
+        <script type="text/javascript">
+            function img(message)
+            {
+                 var obj = document.getElementById("content");
+                 obj.insertAdjacentHTML("beforeEnd",message);
+            }
+            function addFile()
+            {
+                var str = '<INPUT type="file" size="20" NAME="File">'
+                document.getElementById("MyFile").insertAdjacentHTML("beforeEnd", str)
+                alert("hello word!")
+            }
+            function getAll()
+            {
+                content = document.body.innerHTML
+            }
+            /*将发送或接收的图片显示在气泡里面*/
+            function appendMyMessage(name, message)
+            {
+                var obj = document.getElementById("content");
+                obj.insertAdjacentHTML("beforeEnd","<div style='overflow:hidden;'><p class='divMyHead'>"+name+"</p><p class='triangle-right right'>"+message+"</p></div>");
+            }
+            function appendOtherMessage(name, message)
+            {
+                var obj = document.getElementById("content");
+                obj.insertAdjacentHTML("beforeEnd","<div style='overflow:hidden;'><p class='divotherHead'>"+name+"</p><p class='triangle-left left'>"+message+"</p></div>");
+            }
+            function clear()
+            {
+                document.body.innerHTML='';
+            }
+            function scrollBottom()
+            {
+                var body = document.getElementById("content");
+                body.scrollTop = body.scrollHeight;
+            }
+        </script>
+        <style type="text/css">
+        img{max-width:1000px;max-height:1000px;margin: 0 0;}
+        /*定义显示的格式*/
+        p{
+            color:  black;
+            font-family: "Microsoft YaHei";
+            font-size: 14px;
+        }
+        /*显示自己的头像*/
+        .divMyHead{
+            text-align:right;
+            margin:5px 0px 5px 0px;
+            color: #545A65;
+        }
+        /*显示对方的头像*/
+        .divotherHead{
+            margin:5px 0px 0px 0px;
+            color: #545A65;
+        }
+        /*实现对方发送来的消息的方框*/
+        .triangle-left{
+            float:left;
+            max-width:380px;
+            border:1px solid #cccccc;
+            border-radius:5px;
+            padding:4px;
+            background:#cccccc;
+            position:relative;
+            display:inline-block;
+            margin:5px 0px 5px 0px;
+            word-wrap: break-word;
+        }
+        .triangle-left:after{
+            position:absolute;
+            content:"";
+            display:block;
+        }
+        .triangle-left.left:after{
+            width: 0px;
+            height:0px;
+            position: absolute;
+            left: 8px;
+            top: -6px;
+            margin-left: 4px;
+            line-height: 0px;
+            border-width: 5px 5px 0;
+            border-style: solid dashed dashed dashed;
+            border-color: #cccccc;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            transform: rotate(-180deg);
+        }
+        /*实现右边的气泡*/
+        .triangle-right{
+            float:right;
+            max-width:380px;
+            border:1px solid #bedfff;
+            border-radius:5px;
+            padding:5px;
+            background:#bedfff;
+            position:relative;
+            display:inline-block;
+            margin:5px 0px 5px 0;
+            word-wrap: break-word;
+        }
+        .triangle-right:after{
+            position:absolute;
+            content:"";
+            display:block;
+        }
+        .triangle-right.right:after{
+             width: 0px;
+             height:0px;
+             position: absolute;
+             right: 8px;
+             top: -6px;
+             margin-right: 4px;
+             line-height: 0px;
+             border-width: 5px 5px 0;
+             border-style: solid dashed dashed dashed;
+             border-color: #bedfff;
+             border-left-color: transparent;
+             border-right-color: transparent;
+             transform: rotate(-180deg);
+        }
+        </style>
+    </head>
+    <body id="content" style='background:#ffffff'>
+    </body>
+</html>

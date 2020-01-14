@@ -1,0 +1,5 @@
+unireedsolomon 
+numpy 
+PyYAML
+multiprocessing 
+subprocess
