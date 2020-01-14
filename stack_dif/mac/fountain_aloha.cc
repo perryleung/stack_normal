@@ -1,3 +1,6 @@
+/*
+这是一个区别重传的协议，重要包重传不重要包不重传
+*/
 #include <string>
 #include "hsm.h"
 #include "message.h"

@@ -1,3 +1,6 @@
+/*
+这是一个都有重传的协议
+*/
 #include <string>
 #include "hsm.h"
 #include "message.h"

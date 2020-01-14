@@ -1,3 +1,6 @@
+/*
+这是一个无重传的简单aloha协议，是针对UI使用，要在终端协议栈上使用必须将UIClient改为TraceClient
+*/
 #include <string>
 #include "hsm.h"
 #include "message.h"
