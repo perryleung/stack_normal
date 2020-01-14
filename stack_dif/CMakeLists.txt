@@ -14,4 +14,18 @@ add_subdirectory(core)
 
 add_executable(demo ${SRC_LIST})
 
+# 最低CMake版本要求
+cmake_minimum_required(VERSION 3.10.0)
+
+# 项目名称
+project(stack_dif)
+
+# 设置C/C++标准
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 头文件路径
+include_directories("include")
+
 TARGET_LINK_LIBRARIES(demo dev phy mac net tra core)
