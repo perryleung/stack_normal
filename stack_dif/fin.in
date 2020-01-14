@@ -1,0 +1,215 @@
+All defined functions:
+
+File ./include/clientsocket.h:
+void ClientSocket::ClientSocket();
+void ClientSocket::~ClientSocket();
+
+File ./include/config.h:
+void Config::Config();
+void Config::Load(std::string const&);
+YAML::Node Config::operator[](std::string const&) const;
+void Config::~Config();
+
+File ./include/dap.h:
+void dap::Dap<aquasent::Aquasent>::Dap();
+dap::Dap<aquasent::Aquasent>::owner_type *dap::Dap<aquasent::Aquasent>::GetOwner() const;
+void dap::Dap<aquasent::Aquasent>::Map(int);
+void dap::Dap<aquasent::Aquasent>::Notify() const;
+void dap::Dap<aquasent::Aquasent>::SetOwner(aquasent::Aquasent*);
+void dap::Dap<clisocket_sim::ClisocketSim>::Dap();
+dap::Dap<clisocket_sim::ClisocketSim>::owner_type *dap::Dap<clisocket_sim::ClisocketSim>::GetOwner() const;
+void dap::Dap<clisocket_sim::ClisocketSim>::Map(int);
+Quit
+Breakpoint 1 at 0x43ef4a: sap.h:127. (7 locations)
+Starting program: /home/scut/170216stack/src/test 
+Traceback (most recent call last):
+  File "/usr/share/gdb/auto-load/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19-gdb.py", line 63, in <module>
+    from libstdcxx.v6.printers import register_libstdcxx_printers
+ImportError: No module named 'libstdcxx'
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, sap::Sap<aloha::Aloha, 2, 2>::ProcessMsg (
+    this=0x7177e0 <aloha::Module_Aloha>, msg=...) at ./include/sap.h:127
+127	        GetOwner()->GetHsm().ProcessEvent(msg);
+sap::Sap<aloha::Aloha, 2, 2>::GetOwner (this=0x7177e0 <aloha::Module_Aloha>)
+    at ./include/sap.h:142
+142	    inline owner_type* GetOwner() const { return owner_; }
+mod::Module<aloha::Aloha, 2, 2>::GetHsm (this=0x7177e0 <aloha::Module_Aloha>)
+    at ./include/module.h:40
+40	    inline hsm_type &GetHsm() { return hsm_; }
+Run till exit from #0  mod::Module<aloha::Aloha, 2, 2>::GetHsm (
+    this=0x7177e0 <aloha::Module_Aloha>) at ./include/module.h:40
+0x000000000043ef5e in sap::Sap<aloha::Aloha, 2, 2>::ProcessMsg (
+    this=0x7177e0 <aloha::Module_Aloha>, msg=...) at ./include/sap.h:127
+127	        GetOwner()->GetHsm().ProcessEvent(msg);
+Value returned is $1 = 
+          (mod::Module<aloha::Aloha, 2, 2>::hsm_type &) @0x7177f8: {owner_ = 0x7177e0 <aloha::Module_Aloha>, state_list_ = {<std::_List_base<std::shared_ptr<hsm::StateBase>, std::allocator<std::shared_ptr<hsm::StateBase> > >> = {_M_impl = {<std::allocator<std::_List_node<std::shared_ptr<hsm::StateBase> > >> = {<__gnu_cxx::new_allocator<std::_List_node<std::shared_ptr<hsm::StateBase> > >> = {<No data fields>}, <No data fields>}, _M_node = {_M_next = 0x7227e0, _M_prev = 0x722940}}}, <No data fields>}, current_state_ = {<std::__shared_ptr<hsm::StateBase, (__gnu_cxx::_Lock_policy)2>> = {_M_ptr = 0x7246d8, _M_refcount = {_M_pi = 0x7246c0}}, <No data fields>}, event_queue_ = {<std::_List_base<std::shared_ptr<hsm::EventBase>, std::allocator<std::shared_ptr<hsm::EventBase> > >> = {_M_impl = {<std::allocator<std::_List_node<std::shared_ptr<hsm::EventBase> > >> = {<__gnu_cxx::new_allocator<std::_List_node<std::shared_ptr<hsm::EventBase> > >> = {<No data fields>}, <No data fields>}, _M_node = {_M_next = 0x717820 <aloha::Module_Aloha+64>, _M_prev = 0x717820 <aloha::Module_Aloha+64>}}}, <No data fields>}, defer_queue_ = {<std::_List_base<std::shared_ptr<hsm::EventBase>, std::allocator<std::shared_ptr<hsm::EventBase> > >> = {_M_impl = {<std::allocator<std::_List_node<std::shared_ptr<hsm::EventBase> > >> = {<__gnu_cxx::new_allocator<std::_List_node<std::shared_ptr<hsm::EventBase> > >> = {<No data fields>}, <No data fields>}, _M_node = {_M_next = 0x717830 <aloha::Module_Aloha+80>, _M_prev = 0x717830 <aloha::Module_Aloha+80>}}}, <No data fields>}}
+hsm::StateMachine::ProcessEvent (this=0x7177f8 <aloha::Module_Aloha+24>, e=...)
+    at ./include/hsm.h:310
+310	        event_queue_.push_back(e);
+$2 = true
+312	        while (!event_queue_.empty()) {
+$3 = false
+std::list<std::shared_ptr<hsm::EventBase>, std::allocator<std::shared_ptr<hsm::EventBase> > >::empty (this=0x717820 <aloha::Module_Aloha+64>)
+    at /usr/include/c++/4.8/bits/stl_list.h:869
+869	      { return this->_M_impl._M_node._M_next == &this->_M_impl._M_node; }
+Undefined command: "finifh".  Try "help".
+Run till exit from #0  std::list<std::shared_ptr<hsm::EventBase>, std::allocator<std::shared_ptr<hsm::EventBase> > >::empty (
+    this=0x717820 <aloha::Module_Aloha+64>)
+    at /usr/include/c++/4.8/bits/stl_list.h:869
+0x00000000004379c9 in hsm::StateMachine::ProcessEvent (
+    this=0x7177f8 <aloha::Module_Aloha+24>, e=...) at ./include/hsm.h:312
+312	        while (!event_queue_.empty()) {
+Value returned is $4 = false
+313	            ProcessQueueEvent();
+hsm::StateMachine::ProcessQueueEvent (this=0x7177f8 <aloha::Module_Aloha+24>)
+    at ./include/hsm.h:451
+451	        hsm_assert(!event_queue_.empty());
+453	        auto event = event_queue_.front();
+454	        event_queue_.pop_front();
+$5 = {<std::__shared_ptr<hsm::EventBase, (__gnu_cxx::_Lock_policy)2>> = {
+    _M_ptr = 0x72fc20, _M_refcount = {_M_pi = 0x7291e0}}, <No data fields>}
+$6 = {<std::__shared_ptr<hsm::EventBase, (__gnu_cxx::_Lock_policy)2>> = {
+    _M_ptr = 0x72fc20, _M_refcount = {_M_pi = 0x7291e0}}, <No data fields>}
+456	        GetCurrentState()->Process(current_state_, event);
+hsm::StateMachine::GetCurrentState (this=0x7177f8 <aloha::Module_Aloha+24>)
+    at ./include/hsm.h:329
+329	    inline StateBasePtr GetCurrentState() { return current_state_; }
+std::shared_ptr<hsm::StateBase>::shared_ptr (this=0x7fffffffdbb0)
+    at /usr/include/c++/4.8/bits/shared_ptr.h:103
+103	      shared_ptr(const shared_ptr&) noexcept = default;
+Run till exit from #0  std::shared_ptr<hsm::StateBase>::shared_ptr (
+    this=0x7fffffffdbb0) at /usr/include/c++/4.8/bits/shared_ptr.h:103
+0x0000000000437a95 in hsm::StateMachine::GetCurrentState (
+    this=0x7177f8 <aloha::Module_Aloha+24>) at ./include/hsm.h:329
+329	    inline StateBasePtr GetCurrentState() { return current_state_; }
+std::__shared_ptr<hsm::StateBase, (__gnu_cxx::_Lock_policy)2>::operator-> (
+    this=0x7fffffffdbb0) at /usr/include/c++/4.8/bits/shared_ptr_base.h:915
+915		return _M_ptr;
+Run till exit from #0  std::__shared_ptr<hsm::StateBase, (__gnu_cxx::_Lock_policy)2>::operator-> (this=0x7fffffffdbb0)
+    at /usr/include/c++/4.8/bits/shared_ptr_base.h:915
+0x0000000000437bb3 in hsm::StateMachine::ProcessQueueEvent (
+    this=0x7177f8 <aloha::Module_Aloha+24>) at ./include/hsm.h:456
+456	        GetCurrentState()->Process(current_state_, event);
+Value returned is $7 = (hsm::StateBase *) 0x7246d8
+hsm::State<aloha::Idle, aloha::Top, aloha::Idle>::Process (this=0x7246d8, 
+    s=..., e=...) at ./include/hsm.h:722
+722	        switch (this->Dispatch(s, e)) {
+$8 = hsm::no_reaction
+724	                auto state = s->GetStateMachine().GetState<outer_state_type>();
+725	                state->Process(state, e);
+std::__shared_ptr<hsm::StateBase, (__gnu_cxx::_Lock_policy)2>::operator-> (
+    this=0x7fffffffdb60) at /usr/include/c++/4.8/bits/shared_ptr_base.h:915
+915		return _M_ptr;
+Run till exit from #0  std::__shared_ptr<hsm::StateBase, (__gnu_cxx::_Lock_policy)2>::operator-> (this=0x7fffffffdb60)
+    at /usr/include/c++/4.8/bits/shared_ptr_base.h:915
+0x000000000043ecfd in hsm::State<aloha::Idle, aloha::Top, aloha::Idle>::Process
+    (this=0x7246d8, s=..., e=...) at ./include/hsm.h:725
+725	                state->Process(state, e);
+Value returned is $9 = (hsm::StateBase *) 0x724698
+hsm::State<aloha::Top, hsm::StateMachine, aloha::Idle>::Process (
+    this=0x724698, s=..., e=...) at ./include/hsm.h:751
+751	        switch (this->Dispatch(s, e)) {
+$10 = hsm::no_reaction
+756	                break;
+761	    }
+hsm::State<aloha::Idle, aloha::Top, aloha::Idle>::Process (this=0x7246d8, 
+    s=..., e=...) at ./include/hsm.h:726
+726	                break;
+std::shared_ptr<hsm::StateBase>::~shared_ptr (this=0x7fffffffdb60, 
+    __in_chrg=<optimized out>) at /usr/include/c++/4.8/bits/shared_ptr.h:93
+93	    class shared_ptr : public __shared_ptr<_Tp>
+Run till exit from #0  std::shared_ptr<hsm::StateBase>::~shared_ptr (
+    this=0x7fffffffdb60, __in_chrg=<optimized out>)
+    at /usr/include/c++/4.8/bits/shared_ptr.h:93
+hsm::State<aloha::Idle, aloha::Top, aloha::Idle>::Process (this=0x7246d8, 
+    s=..., e=...) at ./include/hsm.h:736
+736	    }
+std::shared_ptr<hsm::StateBase>::~shared_ptr (this=0x7fffffffdbb0, 
+    __in_chrg=<optimized out>) at /usr/include/c++/4.8/bits/shared_ptr.h:93
+93	    class shared_ptr : public __shared_ptr<_Tp>
+Run till exit from #0  std::shared_ptr<hsm::StateBase>::~shared_ptr (
+    this=0x7fffffffdbb0, __in_chrg=<optimized out>)
+    at /usr/include/c++/4.8/bits/shared_ptr.h:93
+0x0000000000437bda in hsm::StateMachine::ProcessQueueEvent (
+    this=0x7177f8 <aloha::Module_Aloha+24>) at ./include/hsm.h:456
+456	        GetCurrentState()->Process(current_state_, event);
+std::shared_ptr<hsm::EventBase>::~shared_ptr (this=0x7fffffffdba0, 
+    __in_chrg=<optimized out>) at /usr/include/c++/4.8/bits/shared_ptr.h:93
+93	    class shared_ptr : public __shared_ptr<_Tp>
+Run till exit from #0  std::shared_ptr<hsm::EventBase>::~shared_ptr (
+    this=0x7fffffffdba0, __in_chrg=<optimized out>)
+    at /usr/include/c++/4.8/bits/shared_ptr.h:93
+0x0000000000437be6 in hsm::StateMachine::ProcessQueueEvent (
+    this=0x7177f8 <aloha::Module_Aloha+24>) at ./include/hsm.h:456
+456	        GetCurrentState()->Process(current_state_, event);
+457	    }
+hsm::StateMachine::ProcessEvent (this=0x7177f8 <aloha::Module_Aloha+24>, e=...)
+    at ./include/hsm.h:312
+312	        while (!event_queue_.empty()) {
+315	    }
+sap::Sap<aloha::Aloha, 2, 2>::ProcessMsg (this=0x7177e0 <aloha::Module_Aloha>, 
+    msg=...) at ./include/sap.h:128
+128	    }
+sched::Scheduler::SchedNtf () at ./include/schedule.h:95
+95	        NtfQueue::Pop();
+QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::Pop ()
+    at ./include/utils.h:48
+48	        LOG(TRACE) << "Pop data from Queue";
+el::base::NullWriter::NullWriter (this=0x7fffffffdc2f)
+    at ./include/easylogging++.h:4894
+4894	    NullWriter(void) {}
+Run till exit from #0  el::base::NullWriter::NullWriter (this=0x7fffffffdc2f)
+    at ./include/easylogging++.h:4894
+0x000000000041ae53 in QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::Pop
+    () at ./include/utils.h:48
+48	        LOG(TRACE) << "Pop data from Queue";
+el::base::NullWriter::operator<< <char [20]> (this=0x7fffffffdc2f)
+    at ./include/easylogging++.h:4903
+4903	        return *this;
+Run till exit from #0  el::base::NullWriter::operator<< <char [20]> (
+    this=0x7fffffffdc2f) at ./include/easylogging++.h:4903
+QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::Pop ()
+    at ./include/utils.h:49
+49	        return GetQueue().pop();
+Value returned is $11 = (el::base::NullWriter &) @0x7fffffffdc2f: {<el::base::NoCopy> = {<No data fields>}, <No data fields>}
+QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::GetQueue ()
+    at ./include/utils.h:55
+55	        return class_type::Instance().queue_;
+Run till exit from #0  QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::GetQueue () at ./include/utils.h:55
+0x000000000041ae69 in QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::Pop
+    () at ./include/utils.h:49
+49	        return GetQueue().pop();
+Value returned is $12 = 
+          (QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::queue_type &) @0x710e60: {c = {<std::_Deque_base<std::shared_ptr<msg::MsgBase>, std::allocator<std::shared_ptr<msg::MsgBase> > >> = {_M_impl = {<std::allocator<std::shared_ptr<msg::MsgBase> >> = {<__gnu_cxx::new_allocator<std::shared_ptr<msg::MsgBase> >> = {<No data fields>}, <No data fields>}, _M_map = 0x71f420, _M_map_size = 8, _M_start = {_M_cur = 0x726230, _M_first = 0x726230, _M_last = 0x726430, _M_node = 0x71f438}, _M_finish = {_M_cur = 0x726240, _M_first = 0x726230, _M_last = 0x726430, _M_node = 0x71f438}}}, <No data fields>}}
+std::queue<std::shared_ptr<msg::MsgBase>, std::deque<std::shared_ptr<msg::MsgBase>, std::allocator<std::shared_ptr<msg::MsgBase> > > >::pop (
+    this=0x710e60 <utils::Singleton<NtfQueue>::Instance()::instance_>)
+    at /usr/include/c++/4.8/bits/stl_queue.h:241
+241		c.pop_front();
+Run till exit from #0  std::queue<std::shared_ptr<msg::MsgBase>, std::deque<std::shared_ptr<msg::MsgBase>, std::allocator<std::shared_ptr<msg::MsgBase> > > >::pop (this=0x710e60 <utils::Singleton<NtfQueue>::Instance()::instance_>)
+    at /usr/include/c++/4.8/bits/stl_queue.h:241
+QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::Pop ()
+    at ./include/utils.h:50
+50	    }
+Run till exit from #0  QueueBase<NtfQueue, std::shared_ptr<msg::MsgBase> >::Pop
+    () at ./include/utils.h:50
+0x000000000041631c in sched::Scheduler::SchedNtf () at ./include/schedule.h:95
+95	        NtfQueue::Pop();
+std::shared_ptr<msg::MsgBase>::~shared_ptr (this=0x7fffffffdc60, 
+    __in_chrg=<optimized out>) at /usr/include/c++/4.8/bits/shared_ptr.h:93
+93	    class shared_ptr : public __shared_ptr<_Tp>
+Run till exit from #0  std::shared_ptr<msg::MsgBase>::~shared_ptr (
+    this=0x7fffffffdc60, __in_chrg=<optimized out>)
+    at /usr/include/c++/4.8/bits/shared_ptr.h:93
+0x000000000041632b in sched::Scheduler::SchedNtf () at ./include/schedule.h:95
+95	        NtfQueue::Pop();
+96	    }
+$13 = true
+$14 = true
+$15 = true
+A debugging session is active.
+
+	Inferior 1 [process 13464] will be killed.
+
+Quit anyway? (y or n) 
