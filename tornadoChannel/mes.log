@@ -1,0 +1,249 @@
+[ 2019-10-13 11:36:12,685 INFO] tornadoChannel.py:529 start the channel server on port 30000 to simulate the channel
+[ 2019-10-13 11:36:17,279 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50318
+[ 2019-10-13 11:36:17,280 INFO] tornadoChannel.py:442 new node mes : Phy ID: 1	Positon: [x, y, z] = [25, 260, 86]
+[ 2019-10-13 11:36:17,281 INFO] tornadoChannel.py:324 new position : Phy ID: 1	Positon: [x, y, z] = [0, 0, 0]
+[ 2019-10-13 11:36:18,386 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50320
+[ 2019-10-13 11:36:18,386 INFO] tornadoChannel.py:442 new node mes : Phy ID: 2	Positon: [x, y, z] = [82, 17, 309]
+[ 2019-10-13 11:36:18,386 INFO] tornadoChannel.py:324 new position : Phy ID: 2	Positon: [x, y, z] = [500, 500, 500]
+[ 2019-10-13 11:36:34,259 INFO] tornadoChannel.py:122 [TX]Packet2: Node1 ---> Node2, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:36:34,826 INFO] tornadoChannel.py:189 [RX]Packet2: Node1--->Node2
+[ 2019-10-13 11:36:34,826 INFO] tornadoChannel.py:412 [RX Begin] Node2  <--  Node1, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:36:41,264 INFO] tornadoChannel.py:122 [TX]Packet4: Node1 ---> Node2, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:36:41,831 INFO] tornadoChannel.py:189 [RX]Packet4: Node1--->Node2
+[ 2019-10-13 11:36:41,831 INFO] tornadoChannel.py:412 [RX Begin] Node2  <--  Node1, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:36:42,002 INFO] tornadoChannel.py:122 [TX]Packet6: Node2 ---> Node1, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:36:42,127 INFO] tornadoChannel.py:122 [TX]Packet8: Node2 ---> Node1, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:36:42,568 INFO] tornadoChannel.py:189 [RX]Packet6: Node2--->Node1
+[ 2019-10-13 11:36:42,569 INFO] tornadoChannel.py:412 [RX Begin] Node1  <--  Node2, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:36:42,693 INFO] tornadoChannel.py:189 [RX]Packet8: Node2--->Node1
+[ 2019-10-13 11:36:42,694 INFO] tornadoChannel.py:412 [RX Begin] Node1  <--  Node2, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:36:42,858 INFO] tornadoChannel.py:122 [TX]Packet10: Node1 ---> Node2, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:36:43,425 INFO] tornadoChannel.py:189 [RX]Packet10: Node1--->Node2
+[ 2019-10-13 11:36:43,426 INFO] tornadoChannel.py:412 [RX Begin] Node2  <--  Node1, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:36:48,310 INFO] tornadoChannel.py:122 [TX]Packet12: Node1 ---> Node2, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:36:48,877 INFO] tornadoChannel.py:189 [RX]Packet12: Node1--->Node2
+[ 2019-10-13 11:36:48,877 INFO] tornadoChannel.py:412 [RX Begin] Node2  <--  Node1, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:36:53,320 INFO] tornadoChannel.py:122 [TX]Packet14: Node1 ---> Node2, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:36:53,887 INFO] tornadoChannel.py:189 [RX]Packet14: Node1--->Node2
+[ 2019-10-13 11:36:53,888 INFO] tornadoChannel.py:412 [RX Begin] Node2  <--  Node1, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:36:58,329 INFO] tornadoChannel.py:122 [TX]Packet16: Node1 ---> Node2, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:36:58,896 INFO] tornadoChannel.py:189 [RX]Packet16: Node1--->Node2
+[ 2019-10-13 11:36:58,897 INFO] tornadoChannel.py:412 [RX Begin] Node2  <--  Node1, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:37:02,455 WARNING] tornadoChannel.py:337 Lost node1 
+[ 2019-10-13 11:37:03,127 WARNING] tornadoChannel.py:337 Lost node2 
+[ 2019-10-13 11:39:17,815 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50348
+[ 2019-10-13 11:39:17,815 INFO] tornadoChannel.py:442 new node mes : Phy ID: 3	Positon: [x, y, z] = [314, 2, 465]
+[ 2019-10-13 11:39:17,816 INFO] tornadoChannel.py:324 new position : Phy ID: 3	Positon: [x, y, z] = [0, 0, 0]
+[ 2019-10-13 11:39:18,943 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50350
+[ 2019-10-13 11:39:18,943 INFO] tornadoChannel.py:442 new node mes : Phy ID: 4	Positon: [x, y, z] = [384, 88, 469]
+[ 2019-10-13 11:39:18,945 INFO] tornadoChannel.py:324 new position : Phy ID: 4	Positon: [x, y, z] = [500, 500, 500]
+[ 2019-10-13 11:40:27,898 WARNING] tornadoChannel.py:337 Lost node4 
+[ 2019-10-13 11:40:28,905 WARNING] tornadoChannel.py:337 Lost node3 
+[ 2019-10-13 11:40:33,667 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50368
+[ 2019-10-13 11:40:33,667 INFO] tornadoChannel.py:442 new node mes : Phy ID: 5	Positon: [x, y, z] = [191, 266, 395]
+[ 2019-10-13 11:40:33,668 INFO] tornadoChannel.py:324 new position : Phy ID: 5	Positon: [x, y, z] = [0, 0, 0]
+[ 2019-10-13 11:40:34,807 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50376
+[ 2019-10-13 11:40:34,807 INFO] tornadoChannel.py:442 new node mes : Phy ID: 6	Positon: [x, y, z] = [200, 121, 395]
+[ 2019-10-13 11:40:34,807 INFO] tornadoChannel.py:324 new position : Phy ID: 6	Positon: [x, y, z] = [500, 500, 500]
+[ 2019-10-13 11:41:40,794 WARNING] tornadoChannel.py:337 Lost node6 
+[ 2019-10-13 11:41:41,385 WARNING] tornadoChannel.py:337 Lost node5 
+[ 2019-10-13 11:41:45,726 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50378
+[ 2019-10-13 11:41:45,726 INFO] tornadoChannel.py:442 new node mes : Phy ID: 7	Positon: [x, y, z] = [409, 348, 173]
+[ 2019-10-13 11:41:45,727 INFO] tornadoChannel.py:324 new position : Phy ID: 7	Positon: [x, y, z] = [0, 0, 0]
+[ 2019-10-13 11:41:46,838 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50380
+[ 2019-10-13 11:41:46,838 INFO] tornadoChannel.py:442 new node mes : Phy ID: 8	Positon: [x, y, z] = [482, 353, 128]
+[ 2019-10-13 11:41:46,839 INFO] tornadoChannel.py:324 new position : Phy ID: 8	Positon: [x, y, z] = [500, 500, 500]
+[ 2019-10-13 11:53:35,263 WARNING] tornadoChannel.py:337 Lost node8 
+[ 2019-10-13 11:53:35,895 WARNING] tornadoChannel.py:337 Lost node7 
+[ 2019-10-13 11:53:41,227 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50390
+[ 2019-10-13 11:53:41,227 INFO] tornadoChannel.py:442 new node mes : Phy ID: 9	Positon: [x, y, z] = [313, 320, 421]
+[ 2019-10-13 11:53:41,228 INFO] tornadoChannel.py:324 new position : Phy ID: 9	Positon: [x, y, z] = [0, 0, 0]
+[ 2019-10-13 11:53:42,339 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50392
+[ 2019-10-13 11:53:42,339 INFO] tornadoChannel.py:442 new node mes : Phy ID: 10	Positon: [x, y, z] = [267, 485, 123]
+[ 2019-10-13 11:53:42,342 INFO] tornadoChannel.py:324 new position : Phy ID: 10	Positon: [x, y, z] = [500, 500, 500]
+[ 2019-10-13 11:54:09,951 WARNING] tornadoChannel.py:337 Lost node10 
+[ 2019-10-13 11:54:10,631 WARNING] tornadoChannel.py:337 Lost node9 
+[ 2019-10-13 11:56:59,922 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50394
+[ 2019-10-13 11:56:59,922 INFO] tornadoChannel.py:442 new node mes : Phy ID: 11	Positon: [x, y, z] = [409, 243, 32]
+[ 2019-10-13 11:56:59,923 INFO] tornadoChannel.py:324 new position : Phy ID: 11	Positon: [x, y, z] = [0, 0, 0]
+[ 2019-10-13 11:57:01,032 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50396
+[ 2019-10-13 11:57:01,033 INFO] tornadoChannel.py:442 new node mes : Phy ID: 12	Positon: [x, y, z] = [152, 294, 131]
+[ 2019-10-13 11:57:01,033 INFO] tornadoChannel.py:324 new position : Phy ID: 12	Positon: [x, y, z] = [500, 500, 500]
+[ 2019-10-13 11:57:37,055 INFO] tornadoChannel.py:122 [TX]Packet18: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:57:37,621 INFO] tornadoChannel.py:189 [RX]Packet18: Node11--->Node12
+[ 2019-10-13 11:57:37,621 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:57:37,790 INFO] tornadoChannel.py:122 [TX]Packet20: Node12 ---> Node11, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:57:37,915 INFO] tornadoChannel.py:122 [TX]Packet22: Node12 ---> Node11, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:57:38,356 INFO] tornadoChannel.py:189 [RX]Packet20: Node12--->Node11
+[ 2019-10-13 11:57:38,357 INFO] tornadoChannel.py:412 [RX Begin] Node11  <--  Node12, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:57:38,481 INFO] tornadoChannel.py:189 [RX]Packet22: Node12--->Node11
+[ 2019-10-13 11:57:38,482 INFO] tornadoChannel.py:412 [RX Begin] Node11  <--  Node12, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:57:38,646 INFO] tornadoChannel.py:122 [TX]Packet24: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:57:39,213 INFO] tornadoChannel.py:189 [RX]Packet24: Node11--->Node12
+[ 2019-10-13 11:57:39,214 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:57:44,106 INFO] tornadoChannel.py:122 [TX]Packet26: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:57:44,673 INFO] tornadoChannel.py:189 [RX]Packet26: Node11--->Node12
+[ 2019-10-13 11:57:44,673 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:57:49,119 INFO] tornadoChannel.py:122 [TX]Packet28: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:57:49,686 INFO] tornadoChannel.py:189 [RX]Packet28: Node11--->Node12
+[ 2019-10-13 11:57:49,687 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:57:54,125 INFO] tornadoChannel.py:122 [TX]Packet30: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:57:54,691 INFO] tornadoChannel.py:189 [RX]Packet30: Node11--->Node12
+[ 2019-10-13 11:57:54,692 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:57:59,136 INFO] tornadoChannel.py:122 [TX]Packet32: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:57:59,703 INFO] tornadoChannel.py:189 [RX]Packet32: Node11--->Node12
+[ 2019-10-13 11:57:59,704 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:04,148 INFO] tornadoChannel.py:122 [TX]Packet34: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:04,714 INFO] tornadoChannel.py:189 [RX]Packet34: Node11--->Node12
+[ 2019-10-13 11:58:04,715 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:09,152 INFO] tornadoChannel.py:122 [TX]Packet36: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:09,718 INFO] tornadoChannel.py:189 [RX]Packet36: Node11--->Node12
+[ 2019-10-13 11:58:09,719 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:14,163 INFO] tornadoChannel.py:122 [TX]Packet38: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:14,729 INFO] tornadoChannel.py:189 [RX]Packet38: Node11--->Node12
+[ 2019-10-13 11:58:14,730 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:19,172 INFO] tornadoChannel.py:122 [TX]Packet40: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:19,739 INFO] tornadoChannel.py:189 [RX]Packet40: Node11--->Node12
+[ 2019-10-13 11:58:19,739 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:24,183 INFO] tornadoChannel.py:122 [TX]Packet42: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:24,750 INFO] tornadoChannel.py:189 [RX]Packet42: Node11--->Node12
+[ 2019-10-13 11:58:24,751 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:29,193 INFO] tornadoChannel.py:122 [TX]Packet44: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:29,760 INFO] tornadoChannel.py:189 [RX]Packet44: Node11--->Node12
+[ 2019-10-13 11:58:29,760 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:34,202 INFO] tornadoChannel.py:122 [TX]Packet46: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:34,768 INFO] tornadoChannel.py:189 [RX]Packet46: Node11--->Node12
+[ 2019-10-13 11:58:34,769 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:39,211 INFO] tornadoChannel.py:122 [TX]Packet48: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:39,778 INFO] tornadoChannel.py:189 [RX]Packet48: Node11--->Node12
+[ 2019-10-13 11:58:39,779 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:44,222 INFO] tornadoChannel.py:122 [TX]Packet50: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:44,789 INFO] tornadoChannel.py:189 [RX]Packet50: Node11--->Node12
+[ 2019-10-13 11:58:44,789 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:49,233 INFO] tornadoChannel.py:122 [TX]Packet52: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:49,800 INFO] tornadoChannel.py:189 [RX]Packet52: Node11--->Node12
+[ 2019-10-13 11:58:49,801 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:54,235 INFO] tornadoChannel.py:122 [TX]Packet54: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:54,802 INFO] tornadoChannel.py:189 [RX]Packet54: Node11--->Node12
+[ 2019-10-13 11:58:54,802 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:58:59,239 INFO] tornadoChannel.py:122 [TX]Packet56: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:58:59,805 INFO] tornadoChannel.py:189 [RX]Packet56: Node11--->Node12
+[ 2019-10-13 11:58:59,806 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:04,250 INFO] tornadoChannel.py:122 [TX]Packet58: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:04,816 INFO] tornadoChannel.py:189 [RX]Packet58: Node11--->Node12
+[ 2019-10-13 11:59:04,817 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:09,257 INFO] tornadoChannel.py:122 [TX]Packet60: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:09,824 INFO] tornadoChannel.py:189 [RX]Packet60: Node11--->Node12
+[ 2019-10-13 11:59:09,825 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:14,268 INFO] tornadoChannel.py:122 [TX]Packet62: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:14,834 INFO] tornadoChannel.py:189 [RX]Packet62: Node11--->Node12
+[ 2019-10-13 11:59:14,835 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:19,275 INFO] tornadoChannel.py:122 [TX]Packet64: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:19,841 INFO] tornadoChannel.py:189 [RX]Packet64: Node11--->Node12
+[ 2019-10-13 11:59:19,842 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:24,283 INFO] tornadoChannel.py:122 [TX]Packet66: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:24,850 INFO] tornadoChannel.py:189 [RX]Packet66: Node11--->Node12
+[ 2019-10-13 11:59:24,851 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:29,291 INFO] tornadoChannel.py:122 [TX]Packet68: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:29,858 INFO] tornadoChannel.py:189 [RX]Packet68: Node11--->Node12
+[ 2019-10-13 11:59:29,859 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:34,297 INFO] tornadoChannel.py:122 [TX]Packet70: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:34,864 INFO] tornadoChannel.py:189 [RX]Packet70: Node11--->Node12
+[ 2019-10-13 11:59:34,865 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:39,309 INFO] tornadoChannel.py:122 [TX]Packet72: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:39,875 INFO] tornadoChannel.py:189 [RX]Packet72: Node11--->Node12
+[ 2019-10-13 11:59:39,876 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:44,311 INFO] tornadoChannel.py:122 [TX]Packet74: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:44,877 INFO] tornadoChannel.py:189 [RX]Packet74: Node11--->Node12
+[ 2019-10-13 11:59:44,878 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:49,321 INFO] tornadoChannel.py:122 [TX]Packet76: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:49,888 INFO] tornadoChannel.py:189 [RX]Packet76: Node11--->Node12
+[ 2019-10-13 11:59:49,888 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:54,331 INFO] tornadoChannel.py:122 [TX]Packet78: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:54,897 INFO] tornadoChannel.py:189 [RX]Packet78: Node11--->Node12
+[ 2019-10-13 11:59:54,898 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 11:59:59,340 INFO] tornadoChannel.py:122 [TX]Packet80: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 11:59:59,907 INFO] tornadoChannel.py:189 [RX]Packet80: Node11--->Node12
+[ 2019-10-13 11:59:59,907 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:04,349 INFO] tornadoChannel.py:122 [TX]Packet82: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:04,916 INFO] tornadoChannel.py:189 [RX]Packet82: Node11--->Node12
+[ 2019-10-13 12:00:04,916 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:09,360 INFO] tornadoChannel.py:122 [TX]Packet84: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:09,926 INFO] tornadoChannel.py:189 [RX]Packet84: Node11--->Node12
+[ 2019-10-13 12:00:09,927 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:14,369 INFO] tornadoChannel.py:122 [TX]Packet86: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:14,935 INFO] tornadoChannel.py:189 [RX]Packet86: Node11--->Node12
+[ 2019-10-13 12:00:14,936 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:19,378 INFO] tornadoChannel.py:122 [TX]Packet88: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:19,945 INFO] tornadoChannel.py:189 [RX]Packet88: Node11--->Node12
+[ 2019-10-13 12:00:19,945 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:24,390 INFO] tornadoChannel.py:122 [TX]Packet90: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:24,957 INFO] tornadoChannel.py:189 [RX]Packet90: Node11--->Node12
+[ 2019-10-13 12:00:24,958 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:29,400 INFO] tornadoChannel.py:122 [TX]Packet92: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:29,967 INFO] tornadoChannel.py:189 [RX]Packet92: Node11--->Node12
+[ 2019-10-13 12:00:29,968 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:34,409 INFO] tornadoChannel.py:122 [TX]Packet94: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:34,975 INFO] tornadoChannel.py:189 [RX]Packet94: Node11--->Node12
+[ 2019-10-13 12:00:34,976 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:39,419 INFO] tornadoChannel.py:122 [TX]Packet96: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:39,986 INFO] tornadoChannel.py:189 [RX]Packet96: Node11--->Node12
+[ 2019-10-13 12:00:39,986 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:44,424 INFO] tornadoChannel.py:122 [TX]Packet98: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:44,991 INFO] tornadoChannel.py:189 [RX]Packet98: Node11--->Node12
+[ 2019-10-13 12:00:44,992 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:49,436 INFO] tornadoChannel.py:122 [TX]Packet100: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:50,002 INFO] tornadoChannel.py:189 [RX]Packet100: Node11--->Node12
+[ 2019-10-13 12:00:50,003 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:54,446 INFO] tornadoChannel.py:122 [TX]Packet102: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:00:55,013 INFO] tornadoChannel.py:189 [RX]Packet102: Node11--->Node12
+[ 2019-10-13 12:00:55,014 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:00:59,456 INFO] tornadoChannel.py:122 [TX]Packet104: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:01:00,022 INFO] tornadoChannel.py:189 [RX]Packet104: Node11--->Node12
+[ 2019-10-13 12:01:00,023 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:01:04,466 INFO] tornadoChannel.py:122 [TX]Packet106: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:01:05,033 INFO] tornadoChannel.py:189 [RX]Packet106: Node11--->Node12
+[ 2019-10-13 12:01:05,033 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:01:09,477 INFO] tornadoChannel.py:122 [TX]Packet108: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:01:10,044 INFO] tornadoChannel.py:189 [RX]Packet108: Node11--->Node12
+[ 2019-10-13 12:01:10,045 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:01:14,487 INFO] tornadoChannel.py:122 [TX]Packet110: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:01:15,054 INFO] tornadoChannel.py:189 [RX]Packet110: Node11--->Node12
+[ 2019-10-13 12:01:15,055 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:01:19,498 INFO] tornadoChannel.py:122 [TX]Packet112: Node11 ---> Node12, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:01:20,064 INFO] tornadoChannel.py:189 [RX]Packet112: Node11--->Node12
+[ 2019-10-13 12:01:20,065 INFO] tornadoChannel.py:412 [RX Begin] Node12  <--  Node11, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:01:22,394 WARNING] tornadoChannel.py:337 Lost node12 
+[ 2019-10-13 12:01:26,073 WARNING] tornadoChannel.py:337 Lost node11 
+[ 2019-10-13 12:06:25,179 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50426
+[ 2019-10-13 12:06:25,179 INFO] tornadoChannel.py:442 new node mes : Phy ID: 13	Positon: [x, y, z] = [414, 139, 95]
+[ 2019-10-13 12:06:25,180 INFO] tornadoChannel.py:324 new position : Phy ID: 13	Positon: [x, y, z] = [0, 0, 0]
+[ 2019-10-13 12:06:26,291 INFO] tornadoChannel.py:441 create a new node on 127.0.0.1:50428
+[ 2019-10-13 12:06:26,291 INFO] tornadoChannel.py:442 new node mes : Phy ID: 14	Positon: [x, y, z] = [367, 341, 142]
+[ 2019-10-13 12:06:26,292 INFO] tornadoChannel.py:324 new position : Phy ID: 14	Positon: [x, y, z] = [500, 500, 500]
+[ 2019-10-13 12:06:57,471 INFO] tornadoChannel.py:122 [TX]Packet114: Node13 ---> Node14, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:06:58,037 INFO] tornadoChannel.py:189 [RX]Packet114: Node13--->Node14
+[ 2019-10-13 12:06:58,038 INFO] tornadoChannel.py:412 [RX Begin] Node14  <--  Node13, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:06:58,205 INFO] tornadoChannel.py:122 [TX]Packet116: Node14 ---> Node13, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:06:58,329 INFO] tornadoChannel.py:122 [TX]Packet118: Node14 ---> Node13, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:06:58,771 INFO] tornadoChannel.py:189 [RX]Packet116: Node14--->Node13
+[ 2019-10-13 12:06:58,772 INFO] tornadoChannel.py:412 [RX Begin] Node13  <--  Node14, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:06:58,895 INFO] tornadoChannel.py:189 [RX]Packet118: Node14--->Node13
+[ 2019-10-13 12:06:58,895 INFO] tornadoChannel.py:412 [RX Begin] Node13  <--  Node14, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:06:59,059 INFO] tornadoChannel.py:122 [TX]Packet120: Node13 ---> Node14, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:06:59,626 INFO] tornadoChannel.py:189 [RX]Packet120: Node13--->Node14
+[ 2019-10-13 12:06:59,627 INFO] tornadoChannel.py:412 [RX Begin] Node14  <--  Node13, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:07:04,521 INFO] tornadoChannel.py:122 [TX]Packet122: Node13 ---> Node14, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:07:05,088 INFO] tornadoChannel.py:189 [RX]Packet122: Node13--->Node14
+[ 2019-10-13 12:07:05,088 INFO] tornadoChannel.py:412 [RX Begin] Node14  <--  Node13, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:07:09,527 INFO] tornadoChannel.py:122 [TX]Packet124: Node13 ---> Node14, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:07:10,093 INFO] tornadoChannel.py:189 [RX]Packet124: Node13--->Node14
+[ 2019-10-13 12:07:10,094 INFO] tornadoChannel.py:412 [RX Begin] Node14  <--  Node13, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:07:14,543 INFO] tornadoChannel.py:122 [TX]Packet126: Node13 ---> Node14, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:07:15,110 INFO] tornadoChannel.py:189 [RX]Packet126: Node13--->Node14
+[ 2019-10-13 12:07:15,111 INFO] tornadoChannel.py:412 [RX Begin] Node14  <--  Node13, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:07:19,550 INFO] tornadoChannel.py:122 [TX]Packet128: Node13 ---> Node14, TxPower: 85,             RxPower: 36.0082938251, Delay: 0.565695546106
+[ 2019-10-13 12:07:20,116 INFO] tornadoChannel.py:189 [RX]Packet128: Node13--->Node14
+[ 2019-10-13 12:07:20,117 INFO] tornadoChannel.py:412 [RX Begin] Node14  <--  Node13, Noise: 24.2205850586,             SINR 11.7877087665
+[ 2019-10-13 12:07:25,491 WARNING] tornadoChannel.py:337 Lost node13 
+[ 2019-10-13 12:07:26,339 WARNING] tornadoChannel.py:337 Lost node14 
