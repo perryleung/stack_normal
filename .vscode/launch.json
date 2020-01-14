@@ -1,0 +1,28 @@
+  {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "(gdb)Launch",                       // 配置名称，将会在启动配置的下拉菜单中显示
+        "type": "cppdbg",             // 配置类型，这里只能为cppdbg
+        "request": "launch",                // 请求配置类型，可以为launch（启动）或attach（附加）
+        "targetArchitecture": "x64",                // 生成目标架构，一般为x86或x64
+        "program": "${workspaceRoot}/build/${fileBasenameNoExtension}.exe",// 将要进行调试的程序的路径
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceRoot}",
+        "environment": [],                    // 程序调试时传递给程序的命令行参数，一般设为空即可
+        "externalConsole": false,              // 调试时是否显示控制台窗口，一般设置为true显示控制台，否则在当前底下的终端显示
+        "internalConsoleOptions": "neverOpen",      // 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡"
+        "MIMode": "gdb",                            // 指定连接的调试器
+        "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",// 调试器路径
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": false
+          }
+        ],
+        "preLaunchTask": "Compile"    //与tasks.json的label一样
+      }
+    ]
+  }
