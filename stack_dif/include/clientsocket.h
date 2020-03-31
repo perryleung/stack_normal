@@ -74,7 +74,7 @@ public:
         fd_(-1),
         server_addr_(""),
         server_port_("")
-    {}
+    {}// this is the init function, fd_=-1, server_addr_=server_port_=NULL
     static ClientSocketPtr NewClient(string hostname, string port);
 
 private:

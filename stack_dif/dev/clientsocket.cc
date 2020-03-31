@@ -22,7 +22,7 @@ ClientSocket::ReadCB(EV_P_ ev_io *w, int revents)
     if (!p) {                   // 内存分配失败
         return;
     }
-    memset((void*)p, 0, BUFFER_SIZE);
+    memset((void*)p, 0, BUFFER_SIZE);//用0来初始化p
 
 
     ssize_t count = LibevTool::Instance().Readn(w->fd, p, BUFFER_SIZE);

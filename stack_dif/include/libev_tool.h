@@ -51,7 +51,4 @@ private:
   struct ev_loop *loop;
 };
 
-
-
-
 #endif

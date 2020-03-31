@@ -14,7 +14,7 @@
 #include "config.h"
 
 template <typename T>
-using Ptr = std::shared_ptr<T>;
+using Ptr = std::shared_ptr<T>;//声明为智能的指针，共享对象
 
 struct IOData
 {
@@ -26,6 +26,7 @@ struct IOData
 
 typedef Ptr<IOData> IODataPtr;//进入WriteQueue和ReadQueue事件的是IODataPtr类型
 //其他队列压入的是MsgReq等三种事件
+//声明IODataPtr是一个指向IOData的智能指针
 
 template <typename SelfType, typename DataType>
 class QueueBase : public utils::Singleton<SelfType>
@@ -35,6 +36,7 @@ public:
     typedef DataType data_type;
     typedef std::queue<data_type> queue_type;
 
+    //静态函数可以在类的外面使用等等功能 QueueBase::Empty()
     static inline data_type& Front() { return GetQueue().front(); }
     static inline data_type& Back() { return GetQueue().back(); }
     static inline bool Empty() { return GetQueue().empty(); }
