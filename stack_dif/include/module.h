@@ -11,12 +11,11 @@
 #define MODULE_INIT(type) static type Module_##type;
 
 #define MODULE_CONSTRUCT(state)                                                \
-		/*
-		需要向某个协议层发事件时，都是通过dap或sap，因为dap和sap是接口
-		每个协议的构造函数里都会执行这个宏定义
-		把顶层状态传入
-		物理层较Sap外还多了一个Dap在driver
-		*/
+		
+		//需要向某个协议层发事件时，都是通过dap或sap，因为dap和sap是接口
+		//每个协议的构造函数里都会执行这个宏定义把顶层状态传入
+		//物理层较Sap外还多了一个Dap在driver
+		
     do {                                                                       \
         GetSap().SetOwner(this);                                               \
         GetTap().SetOwner(this);                                               \

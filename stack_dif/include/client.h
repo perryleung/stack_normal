@@ -5,7 +5,9 @@
 #include "libev_tool.h"
 #include <netinet/in.h>
 #include "schedule.h"
-
+/*
+client是用来与UI、Trace进行通信的
+*/
 struct client;
 extern client* clientLink;
 
@@ -15,9 +17,9 @@ struct client
   int _socketfd;
   ev_io* _read_watcher;
   ev_io* _write_watcher;
-  client* _next;
+  client* _next;    //这个next是什么意思？
 
-  client():
+  client():         //初始化
     _socketfd(-1),
     _read_watcher(NULL),
     _write_watcher(NULL),

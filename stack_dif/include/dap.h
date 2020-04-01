@@ -25,6 +25,8 @@ public:
  * when data income, you can only get the FD and data from Reactor,
  * so, map the FD then DAP, and find the DAP handle data
  */
+
+
 class DapMap : public utils::Singleton<DapMap>
 {
 public:
@@ -64,6 +66,8 @@ public:
     // map FD and DAP
     inline void Map(int fd) { DapMap::Register(fd, this); }//根据GetFd()找到对应的协议层
     //在Dap中获得的套接字描述符后要向DapMap注册（物理层ID与协议指针）
+    //在Dap中，需要获得套接字描述符之后，在向DapMap注册，对应物理层的代码里面Map()函数
+    //最终在QPSK中，完成Dap与fd关系的建立。（最终调度器可以在DapMap中，通过套接字描述符，找到相应的Dap，就可以找到对应的协议层）
     inline void Notify() const { GetOwner()->Notify(); }
 private:
     inline owner_type* GetOwner() const { return owner_; }

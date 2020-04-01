@@ -12,7 +12,9 @@
 #include "noncopyable.h"
 #include "schedule.h"
 #define BUFFER_SIZE 1032
-
+/*
+clientsocket是用来与通信机进行通信的
+*/
 
 using std::string;
 using std::map;

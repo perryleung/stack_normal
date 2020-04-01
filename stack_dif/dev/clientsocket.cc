@@ -68,8 +68,10 @@ ClientSocket::NewClient(string hostname, string port)
     	  //先检查有没有这个IP和端口对应的连接，如果没有就创建一个
         targetClient = make_shared<ClientSocket>();
         if (targetClient->Init(hostname, port)) {
-        	  //调用Init初始化
+        	  //调用Init初始化，初始化时若创建套接字成功将返回true
             clientsocketmap_.Insert(sock, targetClient->fd_, targetClient); // 计数加一
+            //如果创建失败，则不会插入，同时由于这个函数结束时，智能指针自动销毁，因此只有插入成功的情况，该指针的计数才不为0
+            //在这里，clientsocketmap_是一个静态成员，因此对于所有ClientSocket对象都只有一个映射。（它的初始化在类外。）
         }
     }
     //除了初始化以外，还在clientsocketmap_映射对象中插入套接字、文件/套接字描述符、ClientSocke指针
@@ -124,7 +126,9 @@ ClientSocket::Init(string hostname, string port)
     }
         // is_connected_ = true;
     freeaddrinfo(res);          // U1 P251
-
+    //初始化函数Init会对传入的IP地址和端口，创建一个tcp连接，并且设置为非阻塞，然后监听该端口。当可读的时候，就调用LibevTool类中的写回调函数ReadCB。
+    //其中写的回调函数是LibevTool中的WritefdCB，需要传入事件队列，而读的回调函数使用ClientSocket自身类中的ReadCB
+    //监听写的事件只是初始化完成了，如果要写数据要手动操作，即调用ClientSocket类中的Write()函数。
     LibevTool::Instance().Setnonblock(m_sock);        // 设置非阻塞 U1 P343
     fd_ = m_sock;			//套接字描述符
     ev_io_init(&read_io_, ReadCB, fd_, EV_READ);			//初始化read_io_和write_io_
@@ -146,6 +150,7 @@ bool ClientSocket::Free()
 void ClientSocket::Write()
 {
     // ev_io_init(&write_io_, WriteCB, fd_, EV_WRITE);
+    //监听写的事件只是初始化完成了，如果要写数据要手动操作，即调用ClientSocket类中的Write()函数
     ev_io_start(LibevTool::Instance().GetLoop(), &write_io_);
 }
 

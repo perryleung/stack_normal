@@ -67,6 +67,7 @@ struct UdpHeader
     // uint16_t checksum;
 };
 
+//实现协议和层的唯一对应关系：每个协议在继承的时候，先传入模板参数，然后构造出类模板
 class Udp : public mod::Module<Udp, TRA_LAYER, CURRENT_PID>
 {
 public:

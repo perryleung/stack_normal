@@ -7,10 +7,10 @@ using std::vector;
 
 struct Entry
 {
-    uint8_t destNode;
-    uint8_t nextNode;
-    uint8_t metric;
-    uint8_t seqNum;
+    uint8_t destNode;   //8表示目标节点ID
+    uint8_t nextNode;   //下一跳节点ID
+    uint8_t metric;     //两节点距离
+    uint8_t seqNum;     //序列号
 };
 class RouteTable
 {

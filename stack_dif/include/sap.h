@@ -89,7 +89,7 @@ class Sap : SapBase
 {
 public:
     typedef OwnerType owner_type;
-
+    //每个Sap对象在构造时，会先向SapMap注册，因此获得唯一的映射关系（层ID和协议指针）：
     Sap() { SapMap::Register(Layer, Pid, this); }
     ~Sap() {}
     //构造函数里要向SapMap建立唯一映射关系：层ID与协议指针

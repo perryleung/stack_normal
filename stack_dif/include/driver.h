@@ -5,6 +5,7 @@
 #include "dap.h"
 #include "module.h"
 
+
 #define DRIVER_CONSTRUCT(state)                                                \
 		//每个协议层都有Sap，而物理层多一个Dap
 		//每个接口类都有一个私有类是协议类的指针

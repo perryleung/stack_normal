@@ -54,6 +54,10 @@ private:
 				然后调用物理层协议的处理消息函数
 				DapMap中的映射是从套接字描述符到Dap的映射
 				*/
+    /*
+    压入ReadQueue中的事件只包括数据和文件描述符，必须要根据文件描述符找到相应的协议层。因此，如果只靠SapMap的话是不够的，需要有一个套接字描述符和协议层的联系。有了DapMap，就可以根据fd，找到相应协议层拥有的Dap对象，然后调用协议层的处理函数。
+（初始化的时候还是会在SapMap里注册这个协议，并且DapMap里也会有这个协议。一般来说，上层通过SapMap找到物理层，套接字收到数据就通过DapMap找到物理层。）
+    */
         dap::DapBase* p = dap::DapMap::Find(d->fd);
 
         LOG(TRACE) << "receive Data from FD: " << d->fd;

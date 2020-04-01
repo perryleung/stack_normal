@@ -26,7 +26,7 @@
 using namespace std;
 
 
-INITIALIZE_EASYLOGGINGPP
+INITIALIZE_EASYLOGGINGPP    //初始化日志库easylogging++
 
 struct client;
 client* clientLink = NULL;

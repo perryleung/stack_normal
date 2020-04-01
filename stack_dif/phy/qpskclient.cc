@@ -112,10 +112,13 @@ namespace qpskclient{
 
       clientsocketWPtr_ = ClientSocket::NewClient(server_addr, server_port);
 			// 创建与通信机的TCP连接，这里ClientSocket中的Init()会构造一个对象并返回
+      //此处的初始化调用connect函数来建立连接，一般只有两种情况，成功连接和一直连接不上返回错误。（假如长时间未连上，终端不会提示错误并继续往下跑）
+
       if (!clientsocketWPtr_.expired()) {
       	  //如果建立成功则打印以下
           LOG(INFO) << "Map the opened fd of socket and DAP";
           GetDap().Map(GetFd()); //建立fd与dap的键值关系
+          //在Dap中，需要获得套接字描述符之后，在向DapMap注册
           //GetDap()和Dap对象是Driver中的
           //然后调度器可以在DapMap中通过套接字描述符fd_找到相应的Dap，就可以找到对应的协议层
       }
@@ -360,6 +363,7 @@ namespace qpskclient{
 
   void
   MyParser::Parse(const char *input){
+    //MyParser类中的Parse（解析）函数，对这些指令解析，然后发布相应的事件
     if (input[0] == (char)0x55 && input[1] == (char)0xaa) {
       LOG(INFO) << "RX DEVICE CONNECTION NTF 55aa";
       Ptr<EvRxConNtf> p(new EvRxConNtf);
