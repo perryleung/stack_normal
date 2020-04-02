@@ -1,6 +1,11 @@
 /*
 这是一个无重传的简单aloha协议，是针对UI使用，要在终端协议栈上使用必须将UIClient改为TraceClient
 */
+/*
+没有写入trace，应该没法分析MAC层数据。
+没有重传。甚至连等待物理层的Rsp状态都没有。
+所有的MAC层目标地址都是广播地址。
+*/
 #include <string>
 #include "hsm.h"
 #include "message.h"
@@ -105,6 +110,7 @@ void SimpleAloha::SendDown(const Ptr<MsgSendDataReq> &req)
         UIWriteQueue::Push(pkt);
         cliwrite(UIClient);
     }
+    //封装：
     SimpleAlohaHeader *header = req->packet.Header<SimpleAlohaHeader>();
 
     // fill header

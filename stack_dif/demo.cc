@@ -69,6 +69,7 @@ void read_stdin(EV_P_ ev_io *w, int revents)
             m->needCRC=false;
             LOG(INFO)<<"demo  don't need CRC";
         }
+        //从SapMap映射中找到，然后调用Sap接口中的函数
         sap::SapBase* p = sap::SapMap::Find(4, 1);
         p->RecvRsp(m);
     // }else{
@@ -243,7 +244,7 @@ int main(int argc, char** argv)
 
     }
 
-
+    //先把SapMap中各协议初始化再跑循环
     LOG(INFO) << "the size of protocol is " << sap::SapMap::Size();
     LOG(INFO) << "the len of protocol header is " << pkt::PacketHeader::Size();
     Trace::Instance().Init();
@@ -268,6 +269,7 @@ int main(int argc, char** argv)
     ev_io_init(&m_read_listen, read_listen, listenfd, EV_READ);
     ev_io_start(LibevTool::Instance().GetLoop(), &m_read_listen);
 
+    //把Sched作为回调函数，插入准备事件。每次循环前执行
     ev_prepare prepare_watcher;
     ev_prepare_init(&prepare_watcher, sched::Scheduler::Sched);
     ev_prepare_start(LibevTool::Instance().GetLoop(), &prepare_watcher);

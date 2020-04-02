@@ -107,7 +107,7 @@ struct Top : hsm::State<Top, hsm::StateMachine, Idle>
 struct Idle : hsm::State<Idle, Top>
 {
     typedef hsm_vector<MsgSendDataReq, MsgRecvDataNtf> reactions;
-
+    //用最简单的只转移和执行动作，没有守护条件来距离。UDP中，收到应用层的发包事件之后转移状态并且执行下发的函数：
     HSM_TRANSIT(MsgSendDataReq, WaitRsp, &Udp::SendDown);
     HSM_WORK(MsgRecvDataNtf, &Udp::HandleReceiveData);
 };

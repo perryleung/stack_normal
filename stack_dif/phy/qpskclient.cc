@@ -328,6 +328,7 @@ namespace qpskclient{
       if (Owner()->GetErrorPacket()) {
         LOG(INFO) << "This is a error packet!";
       }
+      //从一个协议层发往另一个协议层的事件，都是通过指针传递的。为了实现多态，HSM通过基类指针传递，这样就带来了如何找到事件原型的问题。例如QPSK中往MAC层发MsgRecvDataNtf事件，生成了指针，传入Module基类中的SendNtf函数
         pkt::Packet pkt(const_cast<char *>(recvData.c_str()), recvData.size());
         Ptr<MsgRecvDataNtf> m(new msg::MsgRecvDataNtf);
         m->packet = pkt;
