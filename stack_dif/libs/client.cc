@@ -59,8 +59,9 @@ void cleanClient(int fd)
 //     return;
 // }
 
-
+//client.cc中类外的一个函数，调用的时候会把client对象中的写IO事件插入到循环中
 void cliwrite(client* cli){   
     ev_io_start(LibevTool::Instance().GetLoop(), cli->_write_watcher);
 }
+//（注意：clinet是一个结构体，而对结构体操作的函数都写在结构体外，因此不需要加命名空间或类名。）
 

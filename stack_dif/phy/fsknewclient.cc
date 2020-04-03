@@ -123,6 +123,13 @@ public:
         upError = Config::Instance()["fsknewclient"]["upError"].as<uint16_t>();
         parser_.setUpError(upError);
         flagtosend = false;
+    /* dataSize：42 （配置文件中的数值）
+ dataPer2Frame： 42 （每两帧数据能包含的数据量，事实上纯数据只有40bytes）
+ frameNum：1 			需要多少个两帧。（可能是这样理解的）
+ sendBytesNum：42 	发出的字节数（配置文件中的值可能不是整数倍，补零的情况）
+ zeroBytesNum：0  	补零字节数
+ dataperBag：1024		给通信机发的数据包大小
+ sendPackageNum：1	发多少个数据包给通信机*/
 	frameNum = dataSize / dataPer2Frame;
 	if(dataSize % dataPer2Frame != 0){
 	    ++frameNum;
@@ -133,6 +140,7 @@ public:
         sendPackageNum = static_cast<int>(ceil((static_cast<double>(sendBytesNum)) / (static_cast<double>(dataPerBag))));
 
         readCycle = Config::Instance()["fsknewclient"]["readcycle"].as<uint16_t>();
+        /*事实上，目前规定了只能发两帧数据，即40字节。协议中的处理是：多于42就截断，少于42补零。（其实，纯数据只能发40字节，调试信息中就可以看出，通信机那边又截断了2字节）因此如果希望发送多于40字节的数据，第一个要改的是发送帧数，第二个是改配置文件中的datasize。*/
 
         CleanErrorPacket();
         

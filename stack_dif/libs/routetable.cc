@@ -65,6 +65,7 @@ RouteTable::handleRouteTable(RouteTable &recv, RouteTable &incre)
     }
 }
 
+//RouteTable类中的函数，主要是从路由表查找，是否能找到目标路由地址。如果能找到，则表示能发，返回下一跳路由地址；如果不能发，返回0
 uint8_t
 RouteTable::findNextNode(uint8_t dest)
 {

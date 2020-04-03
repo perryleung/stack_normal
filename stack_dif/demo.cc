@@ -29,7 +29,7 @@ using namespace std;
 INITIALIZE_EASYLOGGINGPP    //初始化日志库easylogging++
 
 struct client;
-client* clientLink = NULL;
+client* clientLink = NULL;//是一个全局变量，整个进程只有这一个连接
 RouteTable globalRouteTable;
 string nodeID;
 int m_fd = STDIN_FILENO;
@@ -106,6 +106,8 @@ void read_listen(EV_P_ ev_io *w, int revents)
     ev_io_init(newClient->_read_watcher, read_conn, newClient->_socketfd, EV_READ);
     ev_io_start(LibevTool::Instance().GetLoop(), newClient->_read_watcher);
 
+/*（如果要往UI和Trace写数据的话，就要往队列里压事件。如果UI或者终端需要往协议栈写数据的话，demo已经将监听读事件插入到循环中，不需要另外再写一个队列）
+demo回调函数read_listen的处理*/
     if (isTestMode == 0)
     {
         addClient<UIWriteQueue>(newClient);

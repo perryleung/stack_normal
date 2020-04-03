@@ -107,6 +107,7 @@ struct Top : hsm::State<Top, hsm::StateMachine, Idle>
 struct Idle : hsm::State<Idle, Top>
 {
     typedef hsm_vector<MsgSendDataReq, MsgRecvDataNtf> reactions;
+    //Idle状态下的处理宏：加入能发，守护条件CanSend会返回true，从而调用SendDown1下放数据。
     //用最简单的只转移和执行动作，没有守护条件来距离。UDP中，收到应用层的发包事件之后转移状态并且执行下发的函数：
     HSM_TRANSIT(MsgSendDataReq, WaitRsp, &Udp::SendDown);
     HSM_WORK(MsgRecvDataNtf, &Udp::HandleReceiveData);
@@ -143,6 +144,7 @@ void Udp::SendDown(const Ptr<MsgSendDataReq> &req)
 
         char* sendBuff = new char[sizeof(recvPackage)];
         memcpy(sendBuff, &recvPackage, sizeof(recvPackage));
+        //先定义一个IOData指针，然后压入UI写队列中，再调用clinet.cc中的写函数即可（调用的时候就把写IO事件插入到循环里，等待下一循环发送）。
         IODataPtr pkt(new IOData);
 
         pkt->fd   = UIClient->_socketfd;
@@ -189,6 +191,7 @@ void Udp::HandleReceiveData(const Ptr<MsgRecvDataNtf> &ntf)
  
     if(UIClient != NULL)
     {
+        //如果有UI的话，说明是有UI应用层头部信息的，可以直接找到应用层头部，然后判断数据类型：
         uint8_t type = (uint8_t)ntf->packet.realRaw()[0];
 
         if (type == 100 || type == 101){
@@ -207,6 +210,7 @@ void Udp::HandleReceiveData(const Ptr<MsgRecvDataNtf> &ntf)
             UIWriteQueue::Push(pkt);
             cliwrite(UIClient);
         } else if(!(type == 5 || type == 7 || type == 8)){
+            //如果不是图像包的话，说明是文本数据，生成一个App_DataPackage包（数据部分只有40字节，加入文本部分很长不是要截掉了吗），然后写到UI
             LOG(INFO)<<"Udp recv text packet";
             struct App_DataPackage recvPackage;
             memcpy(&recvPackage, ntf->packet.Data<UdpHeader>(), sizeof(recvPackage));
@@ -221,6 +225,7 @@ void Udp::HandleReceiveData(const Ptr<MsgRecvDataNtf> &ntf)
             UIWriteQueue::Push(pkt);
             cliwrite(UIClient);
         } else {
+            //如果是图像包（类型是5、7、8），就生成一个图像头结构体大小的包（990bytes），然后写到UI
             LOG(INFO)<<"Udp recv image packet";
             // struct  ImagePackage recvPackage;
    /*          uint8_t *pi = (uint8_t*)ntf->packet.realRaw(); */
@@ -243,6 +248,7 @@ void Udp::HandleReceiveData(const Ptr<MsgRecvDataNtf> &ntf)
             UIWriteQueue::Push(pkt);
             cliwrite(UIClient);
         }
+    //如果没有UI的话：（假如是终端发出的文本，也可以通过这样显示出来。没有向UI或Trace发任何数据，说明到了UDP，测试模式就已经没有进行统计了。）
     }else{
         struct TestPackage recvPackage;
         memcpy(&recvPackage, ntf->packet.Data<UdpHeader>(), sizeof(recvPackage));
@@ -316,3 +322,9 @@ void Udp::GetRsp(const Ptr<MsgSendDataRsp> &rsp)
 #endif
 
 }  // end namespace udp
+/*
+总结：上层收到包就发到网络层；下层收到包，判断应用层类型（根据应用层头部），然后写到UI或者直接在终端显示（无论如何都没有写入Trace）。
+1. 一般来说，传输层收到上层的数据只有三种情况：终端发送数据、UI发送数据、测试模式发送数据。
+2. 从上层传来的事件，目前都是MsgSendDataReq，然后调用SendDown回调。无论是什么数据，只加上UDP头部就往下层传了。（目前UDP没有头部结构体）
+3. 收到数据的时候，需要分情况处理。
+*/

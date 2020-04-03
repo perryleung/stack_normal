@@ -85,6 +85,13 @@ namespace qpskclient{
       DRIVER_CONSTRUCT(Top);
       GetParser().SetOwner(this);
     }
+/*（注意，这里的数据包指的是上位机给通信机发的，一共有1032字节的那个包。而数据帧指的是真实发出去的，一帧239字节的那个帧）
+dataSize      		一个数据包的大小（1024）
+ dataPerFrame  	一个数据帧的大小（239）
+ frameNum    		对一个数据包，应该发帧的数目（5）
+ sendBytesNum   	总的一个数据包大小（239*5=1195）
+ dataPerBag      	一个数据包的大小（1024）（不是很懂为什么这么干）
+ sendPackageNum 	需要发的数据包的数目（1195/1024）*/
 
     void Init() {
       gain = (uint16_t)(Config::Instance()["qpskclient"]["rxgain"].as<double>() / 2.5 * 65535);
@@ -92,6 +99,13 @@ namespace qpskclient{
       sampleRate = Config::Instance()["qpskclient"]["samplerate"].as<uint32_t>();
       dataSize = Config::Instance()["qpskclient"]["datasize"].as<uint16_t>();
       // frameNum = static_cast<int>(ceil((static_cast<double>(dataSize)) / (static_cast<double>(dataPerFrame))));
+    /* dataSize：42 （配置文件中的数值）
+ dataPer2Frame： 42 （每两帧数据能包含的数据量，事实上纯数据只有40bytes）
+ frameNum：1 			需要多少个两帧。（可能是这样理解的）
+ sendBytesNum：42 	发出的字节数（配置文件中的值可能不是整数倍，补零的情况）
+ zeroBytesNum：0  	补零字节数
+ dataperBag：1024		给通信机发的数据包大小
+ sendPackageNum：1	发多少个数据包给通信机*/
       frameNum = dataSize / static_cast<uint16_t>(dataPerFrame);
       if(dataSize % static_cast<uint16_t>(dataPerFrame) != 0){
 					++frameNum;
@@ -103,6 +117,7 @@ namespace qpskclient{
       zeroBytesNum = sendBytesNum - dataSize; // 帧补零数,这里是补零到N帧数据
       sendPackageNum = static_cast<int>(ceil((static_cast<double>(sendBytesNum)) / (static_cast<double>(dataPerBag))));
       readCycle = Config::Instance()["qpskclient"]["readcycle"].as<uint16_t>();
+      
 
       CleanErrorPacket();
 
@@ -324,6 +339,7 @@ namespace qpskclient{
     recvData.append(temp + 8, messageLen);
 
 //下段代码是收到有出错也往上传
+//收到了5帧数据时，就生成一个事件往物理层传，上传的只有MsgRecvDataNtf事件
     if (frameNum == Owner()->GetFrameNum()) {        // 收到5帧数据
       if (Owner()->GetErrorPacket()) {
         LOG(INFO) << "This is a error packet!";
@@ -412,6 +428,7 @@ namespace qpskclient{
     }
   }
 
+//SendRecvDisableCom在上层有数据要发送的时候调用，目的有两个：1. 把上层数据分成数据包。2. 发送指令断开连接。
   template<typename EventType, bool isSendRsp>
   void QpskClient::SendRecvCom(const Ptr<EventType> &){
     if (!IsConnected()) {
@@ -533,6 +550,7 @@ namespace qpskclient{
     Write();
   }
 
+//SendRecvDisableCom2只有在MsgTimeOut事件到来的时候才调用。作用只有一个，就是发指令断开连接。（事实上，QPSK的readCycle，在配置文件中设置成了65535。）
   void QpskClient::SendRecvDisableCom2(const Ptr<MsgTimeOut> &){
     if(!IsConnected()){
       return;

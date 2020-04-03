@@ -21,6 +21,7 @@ public:
   void Setnonblock(int &fd);
   ssize_t Readn(int fd, void* ptr, size_t n_size);
   ssize_t Writen(int fd, void* ptr, size_t n_size);
+  //其中调用的回调函数WritefdCB是LibevTool类中的一个成员函数，每次只写一条消息，若有多条消息，则交给下一个循环。（这样的好处是，不需要一直监听套接字的写事件，只有要写数据的时候才把事件插入循环）
   template<typename Queue>
   static void WritefdCB(EV_P_ ev_io *w, int revents){
     IODataPtr data = Queue::Front();
@@ -55,3 +56,4 @@ private:
 };
 
 #endif
+/*LibevTool类中的回调函数（即把UIWriteQueue队列中的事件拿出来然后处理。其中事件都是IODataPtr类型，里面有文件描述符，字符指针和字符长度。协议栈中需要往UI或Trace写东西的时候，就把一个IOData的指针压入队列）*/

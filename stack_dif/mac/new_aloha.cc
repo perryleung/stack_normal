@@ -138,6 +138,7 @@ void NewAloha::SendUp(const Ptr<MsgRecvDataNtf> &m){
 			recvPacketTemp.push_back({header->serialNum, header->sourID});
 
 			string logStr1 = Trace::Instance().Log(MAC_LAYER, MAC_PID, m->packet, -1, -1, -1, -1, -1, (int)header->sourID, (int)header->destID, (int)header->serialNum, "data","recv");
+			//协议栈中需要写入的时候，先判断TraceClient是否存在，然后调用client.cc中的一个函数cliwrite（这里因为cliwrite写在类外，因此可以直接调用）
 			if (TraceClient != NULL)
 			{
 				IODataPtr pkt(new IOData);
