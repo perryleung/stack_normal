@@ -6,7 +6,7 @@ LibevTool::LibevTool()
 }
 
 ssize_t
-LibevTool::Writen(int fd, void* ptr, size_t n_size)
+LibevTool::Writen(int fd, void* ptr, size_t n_size) //监听读回调函数：WritefdCB，调用Writen来写。每次需要写的时候才调用cliwrite写入，平时关闭。需要先创建IOData事件压入队列中再调用cliwrite函数
 {
     const char* cptr;
     ssize_t nwrite(0);
@@ -34,7 +34,7 @@ LibevTool::Writen(int fd, void* ptr, size_t n_size)
 }
 
 ssize_t
-LibevTool::Readn(int fd, void* ptr, size_t n_size)
+LibevTool::Readn(int fd, void* ptr, size_t n_size)  //监听读回调函数：Readn，解决非阻塞出现的问题
 {
     char *cptr;                 // 步进为1的指针
     size_t nleft;                  // 剩余读数量
@@ -69,7 +69,7 @@ LibevTool::Readn(int fd, void* ptr, size_t n_size)
 }
 
 void
-LibevTool::Setnonblock(int &fd)
+LibevTool::Setnonblock(int &fd)//设置非阻塞函数
 {
     int flags;
 
