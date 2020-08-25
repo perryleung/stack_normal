@@ -1,0 +1,30 @@
+state Top{
+  Top : EvRxErr/Discard
+  	
+	[*]-->WaitConNtf
+    WaitConNtf-->SendSettingReq: EvRxConNtf/\nSendDownSetting1()
+    WaitConNtf: EvTxSetting/Deffer()
+
+	SendSettingReq-->WaitSettingRsp : EvTxSetting
+    SendSettingReq : EvRxSettingAllRsp
+    SendSettingReq : EvRxSettingRsp
+    
+    WaitSettingRsp-->SendSettingReq : EvRxSettingRsp/\nSendDownSetting2()
+	WaitSettingRsp-->Idle : EvRxSettingAllRsp/\nREcvEnable()
+    WaitSettingRsp: EvSendDataReq/\nDeffer()
+    WaitSettingRsp: EvTxSetting/\nDeffer()
+    
+    Idle-->WaitSendingData:EvSendDataReq/\nSendDownData()
+    Idle-->WaitSendingData:EvSendAckReq/\nSendDownAck()
+    
+    WaitSendingData-->WaitDataRsp:WaitDataRsp/\nSendDownMsg()
+	WaitSendingData : EvSendAckReq/Deffer()
+    WaitSendingData : EvSendDataReq/Deffer()  
+    
+    WaitDataRsp-->Idle : EvDataRsp/\nSendDataRsp()
+    WaitDataRsp : EvSendAckReq/Deffer()
+    WaitDataRsp : EvSendDataReq/Deffer()
+    
+   }
+}
+
