@@ -50,6 +50,7 @@ struct NewAlohaHeader{
 #pragma pack;
 
 /*保存数据包的方法：（每个节点的MAC层会有一个串号，每发一个数据包就加一）
+针对发送端，以免重传
 类外定义了PacketInfo的结构体，保存了网络层的数据包（虽然把头部封装好了，但没有移动指针），重传次数（初始值为3），源目标MAC地址*/
 struct PackageInfo{
 	Packet pkt;
@@ -57,7 +58,10 @@ struct PackageInfo{
 	int sourID;
 	int destID;
 };
-//当收到Data数据的时候，会创建一个Info结构体，放入收到Data数据的串号和源MAC地址（以便万一再次收到该Data的时候，又往网络层传一次这个Data。只要确定串号和源MAC地址即可确定是不是同一个MAC数据包）
+/*当收到Data数据的时候，会创建一个Info结构体，放入收到Data数据的串号和源MAC地址（以便万一再次收到该Data的时候，又往网络层传一次这个Data。
+只要确定串号和源MAC地址即可确定是不是同一个MAC数据包）
+针对接收端
+*/
 struct Info{
 	uint16_t serialNum;
 	uint8_t sourID;
@@ -185,9 +189,9 @@ void NewAloha::SendUp(const Ptr<MsgRecvDataNtf> &m){
 					IODataPtr pkt(new IOData);
 
 					pkt->fd = TraceClient->_socketfd;
-
-					char* sendBuff = new char[logStr2.length()];
-					memcpy(sendBuff, logStr2.data(), logStr2.length());
+																		//字符串长度str.length(),字符数组大小strlen(cstr),在cstring.h
+					char* sendBuff = new char[logStr2.length()];		//字符数组
+					memcpy(sendBuff, logStr2.data(), logStr2.length());	//将字符串的内容赋值给字符数组
 					pkt->data = sendBuff;
 					pkt->len = logStr2.length();
 					TraceWriteQueue::Push(pkt);
@@ -300,7 +304,7 @@ void NewAloha::SendDown(const Ptr<MsgSendDataReq> &m){
                 LOG(INFO)<<"packet No"<<(int)header->serialNum<<" resend in "<<times<<" s ";
                 SetTimer(times, header->serialNum);
                 LOG(INFO)<<"send down data packet to MacId: "<<(int)m->address<<" and settimer";
-        }else{
+        }else{//这里已经判断是广播包，广播包后操作如下
 			//接下来需要判断是不是广播包，如果是的话，不需要设置定时器（因为非广播包没收到ACK时，需要超时重传）广播包的处理：
 			header->destID = BROADCAST_ADDERSS; 
 			string logStr = Trace::Instance().Log(MAC_LAYER, MAC_PID, -1, -1, -1, -1, -1, -1, -1, (int)header->sourID, (int)header->destID, -1, "broadcast", "send");
