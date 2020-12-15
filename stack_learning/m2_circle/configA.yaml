@@ -1,0 +1,102 @@
+Log:
+  basePath: ../stackUIpro/logs
+  fileForReadPath: /last_dir.txt
+  nodeId: 1
+  recordLogFileName: /allNodes.log
+Srt:
+  entry1:
+  - 1
+  - 1
+  - 0
+  entry2:
+  - 2
+  - 2
+  - 1
+  entry3:
+  - 3
+  - 2
+  - 2
+  entry4:
+  - 5
+  - 5
+  - 1
+  entry5:
+  - 4
+  - 5
+  - 2
+  nodeID: 1
+aquasent:
+  baudrate: 115200
+  port: /dev/ttyUSB1
+clientsocket:
+  address: 192.168.2.101
+  correlatethreadshort: 0.1
+  cycleprefixms: 20
+  gain: 0.01
+  port: 80
+  samplerate: 80000
+drt:
+  nodeID: 1
+drtPlus:
+  nodeID: 1
+fskclient:
+  address: 192.168.2.101
+  correlatethreadshort: 0.1
+  cycleprefixms: 20
+  gain: 0.2
+  port: 80
+  readcycle: 30
+  samplerate: 80000
+  transmitAmp: 0.02
+fsknewclient:
+  address: 192.168.2.101
+  correlatethreadshort: 0.1
+  cycleprefixms: 20
+  datasize: 42
+  gain: 0.2
+  port: 80
+  readcycle: 30
+  samplerate: 80000
+  transmitAmp: 0.02
+newAloha:
+  MacId: 1
+  MinReSendTime: 15
+  ReSendTimeRange: 10
+qpskclient:
+  address: 192.168.2.101
+  datasize: 1024
+  port: 80
+  qpsknumchannel: 4
+  readcycle: 65535
+  rxgain: 0.2
+  samplerate: 96000
+  threshold: 0.1
+  txgain: 0.02
+server:
+  port: 9080
+simulatechannel:
+  address: 127.0.0.1
+  port: 30001
+test:
+  othernodeID:
+  - 2
+  - 3
+  - 4
+  - 5
+  packetnum: 100
+  seed: 10
+  testmode: 1
+  timeforhandshake: 80
+  timeinterval:
+  - 10
+  - 50
+trace:
+  tracefile: A.log
+  tracemode: 1
+  tracepath: ./logs
+  tracetime: Wed_Sep_25_20_41_36_2019
+vbf:
+  position:
+  - 1
+  - 1
+  - 1

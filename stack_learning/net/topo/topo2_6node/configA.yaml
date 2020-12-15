@@ -1,0 +1,108 @@
+aquasent:
+    port: /dev/ttyUSB1
+    baudrate: 115200
+
+clientsocket:
+    address: 192.168.2.101
+    port: 80
+    samplerate: 80000
+    gain: 0.01
+    cycleprefixms: 20
+    correlatethreadshort: 0.1
+
+qpskclient:
+    address: 192.168.2.101
+    port: 80
+    rxgain: 0.2
+    txgain: 0.01
+    threshold: 0.1
+    qpsknumchannel: 4
+    samplerate: 96000
+    datasize: 1024
+    readcycle: 30
+
+fskclient:
+    address: 192.168.2.101
+    port: 80
+    samplerate: 80000
+    gain: 0.2
+    cycleprefixms: 20
+    correlatethreadshort: 0.1
+    readcycle: 30
+    transmitAmp: 0.005
+
+fsknewclient:
+    address: 192.168.2.101
+    port: 80
+    samplerate: 80000
+    gain: 0.2
+    transmitAmp: 0.01
+    cycleprefixms: 20
+    correlatethreadshort: 0.1
+    readcycle: 30 
+    datasize: 128
+    
+simulatechannel:
+    address: 127.0.0.1
+    port: 30001
+    gobackidle: 3
+
+Srt:
+    nodeID: 1
+    entry1: [0, 0, 0]
+    entry2: [0, 0, 0]
+    entry3: [0, 0, 0]
+    entry4: [0, 0, 0]
+    entry5: [0, 0, 0]
+
+vbf:
+    position: [1, 1, 1]
+drt:
+    nodeID: 1
+    
+drtPlus:
+    nodeID: 1
+
+Dbpcr:
+    id: 1
+    x: 0
+    y: 100
+    z: 0
+    depthThreshold: 0
+    transmitRange: 300
+    reqDeltaParam: 40
+    dataDeltaParam: 40
+
+RangeTest:
+    x: 0
+    y: 0
+    z: 0
+    
+server:
+    port: 9080
+
+test:
+    testmode: 0
+    seed: 10
+    timeinterval: [20, 30]
+    othernodeID: [2, 3, 4]
+    packetnum: 20
+    timeforhandshake: 300
+
+trace:
+    tracemode: 0
+    tracepath: ./tracefile/
+    tracefile: A.log
+
+newAloha:
+    MacId: 1
+    MinReSendTime: 10
+    ReSendTimeRange: 5
+
+routingLayerTest:
+    isOpen: 1
+    recordPath: ./net/testInfo/
+    protocolName: 1_dbpcr
+    isSource: 0
+    packetnum: 100
+    timeinterval: [20, 40]

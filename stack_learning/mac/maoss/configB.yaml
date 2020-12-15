@@ -1,0 +1,103 @@
+Log:
+    nodeId: 2
+    basePath: ../../build-UWAN-Desktop_Qt_5_6_1_GCC_64bit-Debug/logs
+    fileForReadPath: /last_dir.txt
+    recordLogFileName: /allNodes.log
+aquasent:
+    port: /dev/ttyUSB1
+    baudrate: 115200
+
+clientsocket:
+    address: 192.168.2.101
+    port: 80
+    samplerate: 80000
+    gain: 0.01
+    cycleprefixms: 20
+    correlatethreadshort: 0.1
+
+qpskclient:
+    address: 192.168.2.101
+    port: 80
+    rxgain: 1.0
+    txgain: 0.01
+    threshold: 0.1
+    qpsknumchannel: 4
+    samplerate: 96000
+    datasize: 1024
+    readcycle: 30
+
+fskclient:
+    address: 192.168.2.101
+    port: 80
+    samplerate: 80000
+    gain: 0.2
+    cycleprefixms: 20
+    correlatethreadshort: 0.1
+    readcycle: 30
+    transmitAmp: 0.005
+
+fsknewclient:
+    address: 192.168.2.102
+    port: 80
+    samplerate: 80000
+    gain: 0.2
+    transmitAmp: 0.005
+    cycleprefixms: 20
+    correlatethreadshort: 0.1
+    readcycle: 300 
+    datasize: 42
+    
+simulatechannel:
+    address: 127.0.0.1
+    port: 30001
+
+Srt:
+    nodeID: 2
+    entry1: [2, 2, 0]
+    entry2: [1, 1, 1]
+    entry3: [0, 0, 0]
+    entry4: [0, 0, 0]
+    entry5: [0, 0, 0]
+
+vbf:
+    position: [1, 1, 1]
+drt:
+    nodeID: 2
+    
+drtPlus:
+    nodeID: 2
+    
+server:
+    port: 9081
+
+test:
+    testmode: 1
+    seed: 10
+    timeinterval: [2, 3]
+    othernodeID: [1]
+    packetnum: 40
+    timeforhandshake: 20
+
+trace:
+    tracemode: 1
+    tracepath: ./tracefile/
+    tracefile: B.log
+
+newAloha:
+    MacId: 2
+    MinReSendTime: 10
+    ReSendTimeRange: 5
+
+maca:
+    MacId: 2
+    MaxBurst: 8
+    MaxPropDelay: 1
+    EstimateError: 0.001
+    DataInterval: 2.5
+
+dbmac:
+    MacId: 2
+    MaxBurst: 8
+    MaxPropDelay: 0.1
+    EstimateError: 0.001
+    DataInterval: 2.5
